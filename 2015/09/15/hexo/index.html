@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用hexo搭建github pages | SogouWebFront</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+    <link rel="icon" href="https://avatars2.githubusercontent.com/u/3304943?v=3&s=460">
+  
+
+  <link rel="stylesheet" href="/css/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="/css/pure-min.css" type="text/css">
+  <link rel="stylesheet" href="/css/biture.css" type="text/css">
+  <!--[if lt IE 9]><script src="/package/fancybox/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header">
+    <div class="wrap">
+  <div class="inner">
+    <a class="brand" href="/">SogouWebFront</a>
+    <a id="menu-toggle" href="#"><i class="fa fa-bars"></i></a>
+<ul class="nav-menu">
+
+
+    <li><a href="/">home</a></li>
+
+
+
+  <li><a href="#">dropdown menu</a>
+    <ul class="sub-menu">
+
+      <li><a href="//www.google.com/">google</a></li>
+
+    </ul>
+  </li>
+
+
+</ul>
+
+<ul class="nav-menu ext-menu">
+
+
+    <li><a href="//github.com/sogouwebfront/">github</a></li>
+
+
+
+    <li><a href="//zespia.tw/hexo/">hexo</a></li>
+
+
+
+  <li><a href="#">theme</a>
+    <ul class="sub-menu">
+
+      <li><a href="//github.com/sogouwebfront/hexo-theme-biture">biture</a></li>
+
+      <li><a href="//github.com/tommy351/hexo-theme-landscape">landscape</a></li>
+
+      <li><a href="//github.com/tommy351/hexo-theme-light">light</a></li>
+
+    </ul>
+  </li>
+
+
+  <li><a class="various" href="#fbox-tagcloud">tags</a></li>
+</ul>
+</div>
+
+  </div>
+</div>
+
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/hive/" style="font-size: 14px;">hive</a> <a href="/tags/java/" style="font-size: 14px;">java</a> <a href="/tags/jvm/" style="font-size: 14px;">jvm</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/log/" style="font-size: 14px;">log</a> <a href="/tags/shell/" style="font-size: 36px;">shell</a> <a href="/tags/sql/" style="font-size: 14px;">sql</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a></div>
+
+  </header>
+  <div id="main-content" class="wrap">
+  <div class="inner">
+    <article class="post">
+  <div class="pure-g">
+
+    <!-- article: meta -->
+    <div class="pure-u-1-12 article-meta">
+      <div class="date"><time datetime="2015-09-15T04:12:12.000Z">
+        <div class="day">15</div>
+        <div class="month">Sep 2015</div>
+      </time></div>
+      <div class="article-tags">
+        
+
+      </div>
+    </div>
+
+    <!-- article: main -->
+    <div class="pure-u-11-12">
+      <header><div class="article-title">
+        
+  
+    <h1 class="title">使用hexo搭建github pages</h1>
+  
+
+      </div></header>
+      <div class="article-entry">
+        
+          <p>使用hexo搭建github pages。<br><a id="more"></a></p>
+<h2 id="准备工作">准备工作</h2><ol>
+<li>git一些基本知识，可以看 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的Git教程</a></li>
+<li>一个github账号</li>
+</ol>
+<h2 id="github_pages">github pages</h2><p>只需要新建一个repository，名为 {username}.github.io，username为你注册的github账号，然后新建一个页面index.html，写入hello，提交到github中，在页面{username}.github.io中即可显示页面内容。 </p>
+<h2 id="安装hexo">安装hexo</h2><h3 id="Requirements">Requirements</h3><ul>
+<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></li>
+<li><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a></li>
+</ul>
+<h3 id="安装hexo-1">安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="初始化">初始化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --save</span><br><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo命令">Hexo命令</h2><h3 id="新建一篇文章">新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="运行server，可以在浏览器中查看(http://localhost:4000)">运行server，可以在浏览器中查看(<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server <span class="comment">## 可以简写为 hexo s</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="生成静态页面">生成静态页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate <span class="comment">## 一般hexo会自动生成</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="自动部署到github上">自动部署到github上</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy  <span class="comment">## 使用hexo d -g</span></span><br></pre></td></tr></table></figure>
+<p>要使用此命令，首先得安装git部署插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后在_config.yml中添加如下设置:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: &lt;repository url&gt;</span><br><span class="line">  branch: [branch] <span class="comment">##可省略</span></span><br><span class="line">  message: [message] <span class="comment">##可省略</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h2 id="如何处处写文章">如何处处写文章</h2><ol>
+<li>安装git, node.js</li>
+<li>安装hexo, <code>npm install -g hexo-cli</code></li>
+<li>从github上拉代码, <code>git clone https://github.com/SogouWebFront/sogou_hexo.git</code></li>
+<li>初始化hexo</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --save</span><br><span class="line">$ hexo init &lt;folder&gt; <span class="comment">##取消此句！！已经有结构化，无需init</span></span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<ol>
+<li>文章md源码在source/_posts/下，使用<code>hexo new ${post}</code>新建文章，使用<code>hexo s</code>启动服务，<code>hexo d -g</code>提交到github上</li>
+<li>注意最后将文章源码也提交到线上,<code>git add *</code>, <code>git commit -m &quot;${comment}&quot;</code>, <code>git push origin master</code>。</li>
+</ol>
+<h2 id="参考">参考</h2><ul>
+<li><a href="http://hexo.io/" target="_blank" rel="external">Hexo</a></li>
+<li><a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo Docs</a></li>
+<li><a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">Hexo Troubleshooting</a></li>
+<li><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo Github</a> </li>
+</ul>
+
+        
+      </div>
+      <!--<footer><div class="article-comment">
+        
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-hexo" data-title="使用hexo搭建github pages" data-url="http://sogouwebfront.github.io/2015/09/15/hexo/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'sogouwebfront'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+
+      </div></footer>-->
+    </div>
+  </div>
+</article>
+
+  </div>
+  </div>
+  <footer id="footer">
+    <div class="wrap">
+  <div class="inner" style="text-align: center">
+    
+    &copy; 2015 SogouWebFront All Rights Reserved
+    
+
+    / <a href="https://github.com/sogouwebfront/hexo-theme-biture">biture</a> for <a href="http://zespia.tw/hexo/">hexo</a>
+  </div>
+</div>
+
+  </footer>
+<!-- Le javascript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/package/fancybox/jquery-1.11.0.min.js"></script>
+
+
+<!-- Responsive menu -->
+<script>
+$(document).ready(function() {
+  $("#menu-toggle").click(function(event) {
+    event.preventDefault();
+    if ($(this).hasClass("isShow")) {
+      $("#header").css({position: "fixed"});
+      $("ul.nav-menu").hide();
+      $(this).removeClass("isShow");
+    } else {
+      $("#header").css({position: "static"});
+      $("ul.nav-menu").show();
+      $("html, body").scrollTop(0);
+      $(this).addClass("isShow");
+    }
+    return false;
+  });
+
+  $(window).resize(function() {
+    if ($(window).width() > 700) {
+      $("ul.nav-menu").removeAttr('style');
+    }
+  });
+
+});
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/package/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/package/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript">
+(function($){
+  $(".fancybox").fancybox();
+  $(".various").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : true,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+})(jQuery);
+</script>
+
+
+</body>
+</html>
