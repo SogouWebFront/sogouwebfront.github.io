@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vim快捷键 | SogouWebFront</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+    <link rel="icon" href="https://avatars2.githubusercontent.com/u/3304943?v=3&s=460">
+  
+
+  <link rel="stylesheet" href="/css/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="/css/pure-min.css" type="text/css">
+  <link rel="stylesheet" href="/css/biture.css" type="text/css">
+  <!--[if lt IE 9]><script src="/package/fancybox/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header">
+    <div class="wrap">
+  <div class="inner">
+    <a class="brand" href="/">SogouWebFront</a>
+    <a id="menu-toggle" href="#"><i class="fa fa-bars"></i></a>
+<ul class="nav-menu">
+
+
+    <li><a href="/">home</a></li>
+
+
+
+  <li><a href="#">dropdown menu</a>
+    <ul class="sub-menu">
+
+      <li><a href="//www.google.com/">google</a></li>
+
+    </ul>
+  </li>
+
+
+</ul>
+
+<ul class="nav-menu ext-menu">
+
+
+    <li><a href="//github.com/sogouwebfront/">github</a></li>
+
+
+
+    <li><a href="//zespia.tw/hexo/">hexo</a></li>
+
+
+
+  <li><a href="#">theme</a>
+    <ul class="sub-menu">
+
+      <li><a href="//github.com/sogouwebfront/hexo-theme-biture">biture</a></li>
+
+      <li><a href="//github.com/tommy351/hexo-theme-landscape">landscape</a></li>
+
+      <li><a href="//github.com/tommy351/hexo-theme-light">light</a></li>
+
+    </ul>
+  </li>
+
+
+  <li><a class="various" href="#fbox-tagcloud">tags</a></li>
+</ul>
+</div>
+
+  </div>
+</div>
+
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/hive/" style="font-size: 14px;">hive</a> <a href="/tags/java/" style="font-size: 14px;">java</a> <a href="/tags/jvm/" style="font-size: 14px;">jvm</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/log/" style="font-size: 14px;">log</a> <a href="/tags/shell/" style="font-size: 36px;">shell</a> <a href="/tags/sql/" style="font-size: 14px;">sql</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a></div>
+
+  </header>
+  <div id="main-content" class="wrap">
+  <div class="inner">
+    <article class="post">
+  <div class="pure-g">
+
+    <!-- article: meta -->
+    <div class="pure-u-1-12 article-meta">
+      <div class="date"><time datetime="2015-09-15T03:25:40.000Z">
+        <div class="day">15</div>
+        <div class="month">Sep 2015</div>
+      </time></div>
+      <div class="article-tags">
+        
+  
+    <a href='/tags/vim/' class='pure-button pull-right' style='margin:3px;'>vim</a>
+  
+
+
+      </div>
+    </div>
+
+    <!-- article: main -->
+    <div class="pure-u-11-12">
+      <header><div class="article-title">
+        
+  
+    <h1 class="title">vim快捷键</h1>
+  
+
+      </div></header>
+      <div class="article-entry">
+        
+          <p>整理一下用过的vim快捷键。有些平时不太用，但用到就比较捉急，也算温故知新吧。<br><a id="more"></a></p>
+<h2 id="常用快捷键">常用快捷键</h2><ol>
+<li><code>&lt;c-o&gt; a</code> 插入模式下到行尾继续输入(相当于end键)<br><code>&lt;c-o&gt; i</code> 插入模式下到行首继续输入(相当于home键)</li>
+<li><code>h</code>  跳转到屏幕顶端（如果设置了set so=n，则跳转到第n行）<br><code>l</code>  跳转到屏幕底端（如果设置了set so=n，则跳转到倒数第n行）<br><code>zz</code> 光标下内容在屏幕中央</li>
+<li>gd 选中单词并高亮</li>
+<li>j 将下一行提到这行来 (join line)</li>
+<li>r 替换单个字符     R 替换多个字符</li>
+<li>i 插入，i 第一个非空白字符前插入<br>o  当前行后插入一新行   o 当前行前插入一新行</li>
+<li>dd删除行，dw删除单词   ndd   ndw<br>c与d类似，但删除后进入插入模式    </li>
+<li>S删除一行，并进入插入模式</li>
+<li>x删除字符     s删除字符后进入插入模式</li>
+<li>w:  go to the start of the following [w]ord<br>b:  go to the [b]eginning of this word<br>e:  go to the [e]nd of this word<br>t+字符 跳到此行第一个出现此字符的地方</li>
+<li>~按字符大小写转换   gu转换为小写   gU转换为大写     gU3w转换3个单词</li>
+</ol>
+<h2 id="查找">查找</h2><ol>
+<li><code>/xxx(?xxx)</code> 表示在整篇文档中搜索匹配xxx的字符串, / 表示向下查找, ? 表示 向上查找.其中xxx可以是正规表达式,关于正规式就不多说了.  一般来说是区分大小写的, 要想不区分大小写, 那得先输入 :set ignorecase 查找到以后, 再输入 n 查找下一个匹配处, 输入 N 反方向查找.</li>
+<li><code>*(#)</code> 当光标停留在某个单词上时, 输入这条命令表示查找与该单词匹配的 下(上)一个单词. 同样, 再输入n查找下一个匹配处, 输入 N 反方 向查找.</li>
+<li><code>g*(g#)</code> 此命令与上条命令相似, 只不过它不完全匹配光标所在处的单词, 而是匹配包含该单词的所有字符串.</li>
+<li><code>gd</code> 本命令查找与光标所在单词相匹配的单词, 并将光标停留在文档的非 注释段中第一次出现这个单词的地方.</li>
+<li><code>%</code> 本命令查找与光标所在处相匹配的反括号, 包括 () [] {}</li>
+<li><code>f(F)x</code> 本命令表示在光标所在行进行查找, 查找光标右(左)方第一个x字符.  找到后: 输入 ; 表示继续往下找 输入 , 表示反方向查找</li>
+</ol>
+<h2 id="快速移动光标">快速移动光标</h2><ol>
+<li><code>w(e)</code> 移动光标到下一个单词.</li>
+<li><code>b</code>    移动光标到上一个单词.</li>
+<li><code>0</code>    移动光标到本行最开头.</li>
+<li><code>^</code>    移动光标到本行最开头的字符处.</li>
+<li><code>$</code>    移动光标到本行结尾处.</li>
+<li><code>H</code>    移动光标到屏幕的首行.</li>
+<li><code>M</code>    移动光标到屏幕的中间一行.</li>
+<li><code>L</code>    移动光标到屏幕的尾行.</li>
+<li><code>gg</code>   移动光标到文档首行.</li>
+<li><code>G</code>    移动光标到文档尾行.</li>
+<li><code>c-f</code>  (即 ctrl 键与 f 键一同按下) 本命令即 page down.</li>
+<li><code>c-b</code>  (即 ctrl 键与 b 键一同按下, 后同) 本命令即 page up.</li>
+<li><code>&#39;&#39;</code>   此命令相当有用, 它移动光标到上一个标记处, 比如用 gd, * 等查 找到某个单词后, 再输入此.</li>
+<li><code>&#39;.</code>   此命令相当好使, 它移动光标到上一次的修改行</li>
+<li><code>`.</code>   此命令相当强大, 它移动光标到上一次的修改点.</li>
+</ol>
+<h2 id="拷贝,_删除与粘贴">拷贝, 删除与粘贴</h2><ol>
+<li><code>yw</code>  表示拷贝从当前光标到光标所在单词结尾的内容.</li>
+<li><code>dw</code>  表示删除从当前光标到光标所在单词结尾的内容.</li>
+<li><code>y0</code>  表示拷贝从当前光标到光标所在行首的内容.</li>
+<li><code>d0</code>  表示删除从当前光标到光标所在行首的内容.</li>
+<li><code>y$</code>  表示拷贝从当前光标到光标所在行尾的内容.</li>
+<li><code>d$</code>  表示删除从当前光标到光标所在行尾的内容.</li>
+<li><code>yfa</code> 表示拷贝从当前光标到光标后面的第一个a字符之间的内容.</li>
+<li><code>dfa</code> 表示删除从当前光标到光标后面的第一个a字符之间的内容.</li>
+<li><code>yy</code>  表示拷贝光标所在行.</li>
+<li><code>dd</code>  表示删除光标所在行.</li>
+<li><code>D</code>   表示删除从当前光标到光标所在行尾的内容.表示删除从当前光标到光标所在行尾的内容</li>
+<li><code>c</code>   c与d类似，只是删除后进入编辑模式</li>
+<li><code>x</code>   删除单个字符</li>
+<li><code>s</code>   与x类似，删除后进入编辑模式</li>
+</ol>
+<h2 id="数字与命令">数字与命令</h2><p>在 vi 中数字与命令结合往往表示重复进行此命令, 若在扩展模式的开头出现则表示行号定位. 如:</p>
+<ol>
+<li><code>5fx</code>     表示查找光标后第5个x字符.</li>
+<li><code>5w(e)</code>   移动光标到下五个单词.</li>
+<li><code>5yy</code>     表示拷贝光标以下5行.</li>
+<li><code>5dd</code>     表示删除光标以下5行.</li>
+<li><code>y2fa</code>    表示拷贝从当前光标到光标后面的第二个a字符之间的内容.</li>
+<li><code>:12,24y</code> 表示拷贝第12行到第24行之间的内容.</li>
+<li><code>:12,y</code>   表示拷贝第12行到光标所在行之间的内容.</li>
+<li><code>:,24y</code>   表示拷贝光标所在行到第24行之间的内容. 删除类似.</li>
+</ol>
+<h2 id="快速输入字符">快速输入字符</h2><ol>
+<li><code>c-p(c-n)</code> 在编辑模式中, 输入几个字符后再输入此命令则 vi 开始向上(下)搜索开头与其匹配的单词并补齐, 不断输入此命令则循环查找. 此命令会在所有在这个 vim 程序中打开的文件中进行匹配.</li>
+<li><code>c-x-l</code>    在编辑模式中, 此命令快速补齐整行内容, 但是仅在本窗口中出现的文档中进行匹配.</li>
+<li><code>c-x-f</code>    在编辑模式中, 这个命令表示补齐文件名. 如输入:/usr/local/tom 后再输入此命令则它会自动匹配出:/usr/local/tomcat/</li>
+<li><code>abbr</code>     即缩写. 这是一个宏操作, 可以在编辑模式中用一个缩写代替另一个字符串. 比如编写java文件的常常输入 System.out.println, 这很 是麻烦, 所以应该用缩写来减少敲字. 可以这么做:abbr sprt System.out.println,以后在输入sprt后再输入其他非字母符号, 它就会自动扩展为System.out.println</li>
+</ol>
+<h2 id="替换">替换</h2><p>替换是 vi 的强项, 因为可以用正规表达式来匹配字符串.以下提供几个例子.</p>
+<ol>
+<li><code>:s/aa/bb/g</code>      将光标所在行出现的所有包含 aa 的字符串中的 aa 替换为 bb</li>
+<li><code>:s/\/bb/g</code>       将光标所在行出现的所有 aa 替换为 bb, 仅替换 aa 这个单词</li>
+<li><code>:%s/aa/bb/g</code>     将文档中出现的所有包含 aa 的字符串中的 aa 替换为 bb</li>
+<li><code>:12,23s/aa/bb/g</code> 将从12行到23行中出现的所有包含 aa 的字符串中的 aa 替换为 bb</li>
+<li><code>:12,23s/^/#/</code>    将从12行到23行的行首加入 # 字符</li>
+<li><code>:%s= *$==</code>       将所有行尾多余的空格删除</li>
+<li><code>:g/^\s*$/d</code>      将所有不包含字符(空格也不包含)的空行删除.</li>
+</ol>
+<h2 id="折叠">折叠</h2><ol>
+<li><code>zf</code> F-old creation 创建折叠 <ul>
+<li><code>zfgg</code> 从当前行折叠到文件头</li>
+<li><code>zf20G</code> 从当前行折叠到第20行 </li>
+<li><code>10zf+</code> 从当前行向下折叠10行</li>
+<li><code>10zf-</code> 从当前行向上折叠10行</li>
+</ul>
+</li>
+<li><code>zo</code> O-pen a fold   打开折叠</li>
+<li><code>zc</code> C-lose a fold  关闭折叠</li>
+<li><code>zr</code> 关闭所有折叠</li>
+<li><code>zm</code> 打开所有折叠</li>
+<li><code>set foldmethod=()</code> 设置折叠方式<ul>
+<li>manual 手工定义</li>
+<li>indent 根据缩进</li>
+<li>expr   根据表达式</li>
+<li>syntax 根据语法高亮</li>
+<li>diff   对没有更改的文本进行折叠</li>
+<li>marker 根据文中标志折叠</li>
+</ul>
+</li>
+</ol>
+<h2 id="寄存器：">寄存器：</h2><ol>
+<li><code>&quot;{a-zA-Z}yy</code>  保存到对应寄存器中</li>
+<li><code>&quot;{a-zA-Z}p</code>   粘贴对应寄存器中内容</li>
+<li><code>:reg</code>或<code>:dis</code> 查看寄存器内容</li>
+<li>插入模式下使用寄存器: <code>&lt;C-r&gt;</code>+寄存器</li>
+</ol>
+<h2 id="参考">参考</h2><ul>
+<li><a href="http://www.cnblogs.com/fstang/archive/2012/11/28/2793171.html" target="_blank" rel="external">折叠</a></li>
+</ul>
+
+        
+      </div>
+      <footer><div class="article-comment">
+        
+      </div></footer>
+    </div>
+  </div>
+</article>
+
+  </div>
+  </div>
+  <footer id="footer">
+    <div class="wrap">
+  <div class="inner" style="text-align: center">
+    
+    &copy; 2015 SogouWebFront All Rights Reserved
+    
+
+    / <a href="https://github.com/sogouwebfront/hexo-theme-biture">biture</a> for <a href="http://zespia.tw/hexo/">hexo</a>
+  </div>
+</div>
+
+  </footer>
+<!-- Le javascript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/package/fancybox/jquery-1.11.0.min.js"></script>
+
+
+<!-- Responsive menu -->
+<script>
+$(document).ready(function() {
+  $("#menu-toggle").click(function(event) {
+    event.preventDefault();
+    if ($(this).hasClass("isShow")) {
+      $("#header").css({position: "fixed"});
+      $("ul.nav-menu").hide();
+      $(this).removeClass("isShow");
+    } else {
+      $("#header").css({position: "static"});
+      $("ul.nav-menu").show();
+      $("html, body").scrollTop(0);
+      $(this).addClass("isShow");
+    }
+    return false;
+  });
+
+  $(window).resize(function() {
+    if ($(window).width() > 700) {
+      $("ul.nav-menu").removeAttr('style');
+    }
+  });
+
+});
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/package/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/package/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript">
+(function($){
+  $(".fancybox").fancybox();
+  $(".various").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : true,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+})(jQuery);
+</script>
+
+
+</body>
+</html>

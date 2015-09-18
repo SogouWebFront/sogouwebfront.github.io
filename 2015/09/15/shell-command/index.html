@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>shell常用命令整理 | SogouWebFront</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+    <link rel="icon" href="https://avatars2.githubusercontent.com/u/3304943?v=3&s=460">
+  
+
+  <link rel="stylesheet" href="/css/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="/css/pure-min.css" type="text/css">
+  <link rel="stylesheet" href="/css/biture.css" type="text/css">
+  <!--[if lt IE 9]><script src="/package/fancybox/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header">
+    <div class="wrap">
+  <div class="inner">
+    <a class="brand" href="/">SogouWebFront</a>
+    <a id="menu-toggle" href="#"><i class="fa fa-bars"></i></a>
+<ul class="nav-menu">
+
+
+    <li><a href="/">home</a></li>
+
+
+
+  <li><a href="#">dropdown menu</a>
+    <ul class="sub-menu">
+
+      <li><a href="//www.google.com/">google</a></li>
+
+    </ul>
+  </li>
+
+
+</ul>
+
+<ul class="nav-menu ext-menu">
+
+
+    <li><a href="//github.com/sogouwebfront/">github</a></li>
+
+
+
+    <li><a href="//zespia.tw/hexo/">hexo</a></li>
+
+
+
+  <li><a href="#">theme</a>
+    <ul class="sub-menu">
+
+      <li><a href="//github.com/sogouwebfront/hexo-theme-biture">biture</a></li>
+
+      <li><a href="//github.com/tommy351/hexo-theme-landscape">landscape</a></li>
+
+      <li><a href="//github.com/tommy351/hexo-theme-light">light</a></li>
+
+    </ul>
+  </li>
+
+
+  <li><a class="various" href="#fbox-tagcloud">tags</a></li>
+</ul>
+</div>
+
+  </div>
+</div>
+
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/hive/" style="font-size: 14px;">hive</a> <a href="/tags/java/" style="font-size: 14px;">java</a> <a href="/tags/jvm/" style="font-size: 14px;">jvm</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/log/" style="font-size: 14px;">log</a> <a href="/tags/shell/" style="font-size: 36px;">shell</a> <a href="/tags/sql/" style="font-size: 14px;">sql</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a></div>
+
+  </header>
+  <div id="main-content" class="wrap">
+  <div class="inner">
+    <article class="post">
+  <div class="pure-g">
+
+    <!-- article: meta -->
+    <div class="pure-u-1-12 article-meta">
+      <div class="date"><time datetime="2015-09-15T03:23:13.000Z">
+        <div class="day">15</div>
+        <div class="month">Sep 2015</div>
+      </time></div>
+      <div class="article-tags">
+        
+  
+    <a href='/tags/shell/' class='pure-button pull-right' style='margin:3px;'>shell</a>
+  
+
+
+      </div>
+    </div>
+
+    <!-- article: main -->
+    <div class="pure-u-11-12">
+      <header><div class="article-title">
+        
+  
+    <h1 class="title">shell常用命令整理</h1>
+  
+
+      </div></header>
+      <div class="article-entry">
+        
+          <p>只整理一些平时想用，可能又突然记不起来的命令和用法。都是基于bash。<br>如果不想在命令行使用<code>man</code>来阅读手册，可以在这个网站查看 <a href="http://explainshell.com/" target="_blank" rel="external">http://explainshell.com/</a><br><a id="more"></a></p>
+<h2 id="概述">概述</h2><ol>
+<li>学会使用<code>man</code>命令，查看特定命令的手册。<code>man -k</code>或<code>apropos</code>，可以在你不知道执行某个特定任务所需要命令的名称时，查找这个命令。</li>
+<li>学会使用<code>&gt;</code>和<code>&lt;</code>来重定向输入输出，用<code>|</code>建立管道。</li>
+<li>学习使用通配符。</li>
+<li>学习使用bash的任务管理器, <code>&amp;</code>, <code>ctrl-z</code>, <code>ctrl-c</code>, <code>jobs</code>, <code>fg</code>, <code>bg</code>, <code>kill</code>, <code>killall</code>等。</li>
+<li>学习使用ssh, 并且知道如果通过<code>ssh-agent</code>,<code>ssh-add</code>等实现无密码认证。</li>
+<li>掌握文件管理命令, <code>ls</code>, <code>less</code>, <code>head</code>, <code>tail</code>, <code>ln</code> <code>ln -s</code>(硬链接/软链接), <code>chown</code>, <code>chmod</code>, <code>du</code>等。</li>
+<li>掌握文件系统命令, <code>df</code>, <code>mount</code>, <code>fdisk</code>, <code>mkfs</code>, <code>lsblk</code>等。</li>
+<li>熟练掌握正则表达式，以及<code>grep</code>/<code>egrep</code>/<code>fgrep</code>工具。有必要知道 -i, -o, -A, -a 以及 -B 选项的意思。</li>
+<li>学习基本的网络管理命令, <code>ifconfig</code>, <code>dig</code>等。</li>
+<li>学习使用包管理器，针对不同的linux发行版本有不同的包管理器, <code>apt-get</code>, <code>yum</code>, <code>brew</code>等。</li>
+<li>学习使用打包命令, <code>tar</code>, <code>zip</code>等。</li>
+</ol>
+<h2 id="基础知识">基础知识</h2><h3 id="bash组合键">bash组合键</h3><ul>
+<li><code>ctrl-a</code> 移动到行首</li>
+<li><code>ctrl-e</code> 移动到行尾</li>
+<li><code>ctrl-xx</code> 在命令行首和光标之间移动</li>
+<li><code>ctrl-u</code> 删除整行</li>
+<li><code>ctrl-w</code> 从光标处删除到词首</li>
+<li><code>ctrl-k</code> 删除到行尾</li>
+<li><code>ctrl-r</code> 逆向搜索命令历史</li>
+<li><code>ctrl-p</code> 历史中上一条命令</li>
+<li><code>ctrl-n</code> 历史中下一条命令</li>
+<li><code>ctrl-l</code> clear，清空屏幕</li>
+<li><code>!$</code> 上一个参数</li>
+<li><code>!!</code> 历史中上一条命令 </li>
+</ul>
+<h3 id="通配符">通配符</h3><h3 id="引号">引号</h3><ul>
+<li><p>单引号 <code>&#39;</code><br>由单引号括起来的字符都作为普通字符出现。特殊字符用单引号括起来以后，也会失去原有意义，而只作为普通字符解释。</p>
+</li>
+<li><p>双引号 <code>&quot;</code><br>单引号告诉shell忽略所有特殊字符，而双引号只要求忽略大多数，具体说，括在双引号中的三种特殊字符不被忽略：<code>$</code>,<code>\</code>,<code>` </code>.<br>来看一个例子来说明单引号和双引号的区别：</p>
+</li>
+</ul>
+<pre><code>~ x=*
+~ echo <span class="variable">$x</span>
+a b pet.txt wget
+~ echo <span class="string">'$x'</span>
+<span class="variable">$x</span>
+~ echo <span class="string">"$x"</span>
+*
+
+shell在处理时会先作变量替换，然后作文件名替换，最后把这行处理为参数。
+</code></pre><ul>
+<li>反引号 <code>` </code><br>命令替换是指shell能够将一个命令的标准输出插在一个命令行中任何位置。shell中有两种方法作命令替换：把shell命令用反引号或者$(…)结构括起来，其中，$(…)格式受到POSIX标准支持，也利于嵌套。 </li>
+</ul>
+<pre><code>~ echo <span class="string">"now is `date`"</span>
+now is <span class="number">2015</span>年 <span class="number">9</span>月<span class="number">13</span>日 星期日 <span class="number">22</span>时<span class="number">23</span>分<span class="number">42</span>秒 CST
+~ echo <span class="string">"now is $(date)"</span>
+now is <span class="number">2015</span>年 <span class="number">9</span>月<span class="number">13</span>日 星期日 <span class="number">22</span>时<span class="number">23</span>分<span class="number">55</span>秒 CST
+</code></pre><h3 id="标准输入输出">标准输入输出</h3><p>执行一个shell命令行时通常会自动打开三个标准文件，即标准输入文件（stdin），通常对应终端的键盘；标准输出文件（stdout）和标准错误输出文件（stderr），这两个文件都对应终端的屏幕。进程将从标准输入文件中得到输入数据，将正常输出数据输出到标准输出文件，而将错误信息送到标准错误文件中。</p>
+<h3 id="输入输出重定向">输入输出重定向</h3><ol>
+<li>输入重定向<br>输入重定向是指把命令（或可执行程序）的标准输入重定向到指定的文件中。也就是说，输入可以不来自键盘，而来自一个指定的文件。所以说，输入重定向主要用于改变一个命令的输入源，特别是改变那些需要大量输入的输入源。<br>有<code>&lt;</code>和<code>&lt;&lt;</code>两种操作符。</li>
+<li>输出重定向<br>输出重定向是指把命令（或可执行程序）的标准输出或标准错误输出重新定向到指定文件中。这样，该命令的输出就不显示在屏幕上，而是写入到指定文件中。输出重定向还可以用于把一个命令的输出当作另一个命令的输入（还有一种更简单的方法，就是使用管道）。</li>
+</ol>
+<ul>
+<li><code>&gt;</code>后的文件如果存在，此文件会被重写；<code>&gt;&gt;</code>会追加到文件后面。</li>
+<li><code>2&gt;</code>或<code>2&gt;&gt;</code>表示错误输出重定向</li>
+<li><code>&amp;&gt;</code>表示将标准输出和错误输出同时写到同一个文件中。<h3 id="管道">管道</h3>管道可以把一系列命令连接起来，这意味着第一个命令的输出会作为第二个命令的输入通过管道传给第二个命令，第二个命令的输出又会作为第三个命令的输入，以此类推。显示在屏幕上的是管道行中最后一个命令的输出（如果命令行中未使用输出重定向）。<br>比如很常用的 <code>ps -ef | grep resin</code>，结果只会展现出resin的ps信息。</li>
+</ul>
+<h3 id="netstat">netstat</h3><h3 id="tar">tar</h3><h3 id="xargs">xargs</h3><h2 id="文件处理">文件处理</h2><h3 id="awk">awk</h3><h3 id="sed">sed</h3><h3 id="grep">grep</h3><h2 id="常用命令">常用命令</h2><ol>
+<li><code>cd -</code> 回到上一个目录</li>
+<li><code>ls -lh</code>  -h表示human-readable，即友好可读的显示方式。</li>
+<li><code>ls -lrt</code> 以文件修改时间排序</li>
+<li><code>ls -lrS</code> 以文件大小排序</li>
+<li><code>df -h</code> 查看各挂载点磁盘使用情况 </li>
+<li><code>du -hs .</code> 查看当前目录的总大小</li>
+<li><code>du -hs ./*</code> 查看当前目录下文件和目录的大小</li>
+</ol>
+<h2 id="附几个dos命令">附几个dos命令</h2><h3 id="dir">dir</h3><p>类似于ls</p>
+<h3 id="rd_/s/q_${path}">rd /s/q ${path}</h3><p>递归删除路径 </p>
+<h2 id="参考">参考</h2><ul>
+<li><a href="http://explainshell.com/" target="_blank" rel="external">explain shell</a>: 在线查看shell命令</li>
+<li><a href="https://github.com/alebcay/awesome-shell" target="_blank" rel="external">awesome shell</a>: 精心列出shell相关工具和资源</li>
+</ul>
+
+        
+      </div>
+      <footer><div class="article-comment">
+        
+      </div></footer>
+    </div>
+  </div>
+</article>
+
+  </div>
+  </div>
+  <footer id="footer">
+    <div class="wrap">
+  <div class="inner" style="text-align: center">
+    
+    &copy; 2015 SogouWebFront All Rights Reserved
+    
+
+    / <a href="https://github.com/sogouwebfront/hexo-theme-biture">biture</a> for <a href="http://zespia.tw/hexo/">hexo</a>
+  </div>
+</div>
+
+  </footer>
+<!-- Le javascript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/package/fancybox/jquery-1.11.0.min.js"></script>
+
+
+<!-- Responsive menu -->
+<script>
+$(document).ready(function() {
+  $("#menu-toggle").click(function(event) {
+    event.preventDefault();
+    if ($(this).hasClass("isShow")) {
+      $("#header").css({position: "fixed"});
+      $("ul.nav-menu").hide();
+      $(this).removeClass("isShow");
+    } else {
+      $("#header").css({position: "static"});
+      $("ul.nav-menu").show();
+      $("html, body").scrollTop(0);
+      $(this).addClass("isShow");
+    }
+    return false;
+  });
+
+  $(window).resize(function() {
+    if ($(window).width() > 700) {
+      $("ul.nav-menu").removeAttr('style');
+    }
+  });
+
+});
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/package/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/package/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript">
+(function($){
+  $(".fancybox").fancybox();
+  $(".various").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : true,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+})(jQuery);
+</script>
+
+
+</body>
+</html>
